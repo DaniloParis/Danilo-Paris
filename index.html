@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Directed By Danilo Paris</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body,html{height:100%;font-family:'Playfair Display',serif;scroll-behavior:smooth;background:#111;color:white;}
+section{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background-size:cover;
+  background-position:center;
+  padding:50px 20px;
+}
+h1{font-size:3.2em;margin-bottom:20px;text-shadow:2px 2px 8px rgba(0,0,0,0.7);}
+h2{font-size:2.7em;margin-bottom:30px;text-shadow:2px 2px 8px rgba(0,0,0,0.7);}
+h3{margin:15px 0;}
+p{font-size:1.1em;line-height:1.6;}
+
+/* Redes sociales outline en blanco */
+.socials{
+  margin-bottom:25px;
+  display:flex;
+  justify-content:center;
+}
+.socials img{
+  width:45px;
+  margin:0 15px;
+  cursor:pointer;
+  filter: brightness(0) invert(1);
+  background:none;
+  border:none;
+  transition: transform 0.3s;
+}
+.socials img:hover{transform: scale(1.2);}
+
+/* Botones */
+.nav-buttons{
+  margin-bottom:20px;
+  display:flex;
+  gap:20px;
+}
+.nav-buttons button{
+  padding:18px 35px;
+  font-size:1.2em;
+  font-family:'Playfair Display',serif;
+  border:none;border-radius:12px;cursor:pointer;
+  background:rgba(255,255,255,0.08);
+  color:white;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+.nav-buttons button:hover{
+  background:rgba(255,255,255,0.15);
+  transform: translateY(-3px);
+}
+
+/* Descripción en inicio */
+.descripcion{
+  max-width:900px;
+  margin-top:25px;
+  font-size:1.15em;
+  line-height:1.6;
+  background:rgba(0,0,0,0.5);
+  padding:22px;
+  border-radius:14px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.6);
+}
+
+/* Grid elegante */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:60px 50px;
+  width:100%;
+  max-width:1200px;
+  margin-top:20px;
+}
+
+.card{
+  background:rgba(0,0,0,0.65);
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.7);
+}
+.card img{
+  width:100%;
+  border-radius:15px;
+  transition: transform 0.3s;
+  cursor:pointer;
+}
+.card img:hover{transform: scale(1.03);}
+
+/* Modal */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.95);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+.modal video, .modal iframe{
+  max-width:90%;
+  max-height:80%;
+  border-radius:15px;
+}
+.close{
+  position:absolute;top:20px;right:30px;
+  font-size:40px;color:white;cursor:pointer;
+  transition: color 0.3s;
+}
+.close:hover{color:#ff5555;}
+
+/* BIOGRAFÍA */
+.bio-box{
+  background:rgba(0,0,0,0.75);
+  padding:40px;
+  border-radius:20px;
+  max-width:1000px;
+  text-align:left;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+.bio-box h3{margin-top:20px;margin-bottom:10px;}
+.bio-box p{margin-bottom:10px;}
+
+/* Animación de entrada de letras */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Pantalla 1 -->
+<section id="inicio" style="background-image:url('foto1.jpg')">
+<h1>Directed By Danilo Paris</h1>
+<div class="socials">
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/danilo.paris_?igsh=M2s1aWlhcWM2b3N3&utm_source=qr" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+  </a>
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/share/16hU65HQJY/?mibextid=wwXIfr" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
+  </a>
+  <!-- YouTube -->
+  <a href="https://youtube.com/@daniloparis?si=MHDeGX6_dUEmvwyD" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube">
+  </a>
+</div>
+<div class="nav-buttons">
+  <button onclick="location.href='#cortos'">CORTOMETRAJES</button>
+  <button onclick="location.href='#videos'">VIDEOS MUSICALES</button>
+  <button onclick="location.href='#bio'">BIOGRAFÍA</button>
+</div>
+<div class="descripcion">
+Danilo Paris es un músico y cineasta con una destacada trayectoria en la que ya ha sumado grandes logros en su joven carrera, ganando varios premios y participaciones en festivales de cine internacionales como el Festival Internacional de Cine de La Habana, Festival Internacional de Cine de Gibara, Muestra Cine Joven ICAIC, World Cinema Amsterdam, Américas Film Festival de New York, New Generation Miami Short film Festival, United Latino International Film Festival, entre otros.
+</div>
+</section>
+
+<!-- Pantalla 2: CORTOMETRAJES -->
+<section id="cortos" style="background-image:url('foto2.jpg')">
+<h2>CORTOMETRAJES</h2>
+<div class="grid">
+  <div class="card">
+    <h3>Agnus Dei</h3>
+    <p>Ficción / 30min<br>Dirección y guion: Danilo Paris<br>Director de Fotografía: David Cruz<br>Producción: Patricia Santa Coloma</p>
+    <img src="foto3.jpg" onclick="openVideo('https://player.vimeo.com/video/1120081012?autoplay=1')">
+  </div>
+  <div class="card">
+    <h3>La Sed Humana</h3>
+    <p>Ficción / 18min<br>Director: Danilo Paris & Gabriel Alemán<br>Guion: Danilo Paris<br>Director de Fotografía: Gabriel Alemán<br>Producción: Patricia Santa Coloma & Ivette Valdés</p>
+    <img src="foto4.jpg" onclick="openVideo('https://www.youtube.com/embed/nt_2qJWQrws?autoplay=1&vq=hd1080')">
+  </div>
+  <div class="card">
+    <h3>Sobras</h3>
+    <p>Ficción / 12min<br>Dirección y guion: Danilo Paris<br>Dirección de Fotografía: Raúl Torrens</p>
+    <img src="foto5.jpg" onclick="openVideo('https://www.youtube.com/embed/72LOmKM_phs?autoplay=1&vq=hd1080')">
+  </div>
+  <div class="card">
+    <h3>Autómatas</h3>
+    <p>Ficción / 6min<br>Director: Danilo Paris & Gabriel Alemán<br>Guion: Danilo Paris<br>Director de Fotografía: Gabriel Alemán<br>Producción: Patricia Santa Coloma & Ivette Valdés</p>
+    <img src="foto6.jpg" onclick="openVideo('https://www.youtube.com/embed/of_4Oydm1sg?autoplay=1&vq=hd1080')">
+  </div>
+</div>
+</section>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeVideo()">&times;</span>
+  <div id="videoContainer"></div>
+</div>
+
+<!-- Pantalla 3: VIDEOS MUSICALES -->
+<section id="videos" style="background-image:url('foto7.jpg')">
+<h2>VIDEOS MUSICALES</h2>
+<div class="grid">
+  <div class="card">
+    <h3>Encontrarnos otra vez</h3>
+    <p>Director: Danilo Paris<br>Artistas: Leoni Torres, Descemer Bueno<br>Director de Fotografía: Kevin Álvarez</p>
+    <img src="foto9.jpg" alt="Encontrarnos otra vez" onclick="openVideo('https://www.youtube.com/embed/VVYidRjNfjI?autoplay=1&vq=hd1080')">
+  </div>
+
+  <div class="card">
+    <h3>3/4 de mi alma</h3>
+    <p>Director: Danilo Paris & Lisandro Vázquez<br>Artistas: Leoni Torres & Danilo Paris<br>Director de Fotografía: Sergio González</p>
+    <img src="foto10.jpg" alt="3/4 de mi alma" onclick="openVideo('https://www.youtube.com/embed/7IKbrLzW-w0?autoplay=1&vq=hd1080')">
+  </div>
+
+  <div class="card">
+    <h3>Sandunguera</h3>
+    <p>Director: Danilo Paris & Yaas Valdés<br>Artista: Anthony Bravo</p>
+    <img src="foto11.jpg" alt="Sandunguera" onclick="openVideo('https://www.youtube.com/embed/-zemqeCQlyM?autoplay=1&vq=hd1080')">
+  </div>
+
+  <div class="card">
+    <h3>Bóveda Celeste</h3>
+    <p>Director: Danilo Paris & Eduardo Eimil<br>Director de Fotografía: David Cruz</p>
+    <img src="foto12.jpg" alt="Bóveda Celeste" onclick="openVideo('https://www.youtube.com/embed/hLZVr6LOeEc?autoplay=1&vq=hd1080')">
+  </div>
+</div>
+</section>
+
+<!-- Pantalla 4: BIOGRAFÍA -->
+<section id="bio" style="background-image:url('foto8.jpg')">
+<h2>BIOGRAFÍA</h2>
+<div class="bio-box">
+<p>
+Danilo Paris<br>
+Filmmaker & Musician<br>
+📧 Email: daniloparismusic@gmail.com
+</p>
+<p><strong>Professional Profile</strong><br>
+Film and television director and editor, composer, and music producer specializing in audiovisual projects for film, television, advertising, and digital media. Over 10 years of experience developing music videos, short films, advertising campaigns, and TV shows. Recognized for creativity, technical expertise, and ability to lead teams. Skilled in digital marketing, social media growth, and brand positioning, combining artistic vision with data-driven strategies. Equipped with professional recording, editing, and mixing gear. Available to travel and work in multicultural environments.
+</p>
+<p><strong>Professional Experience</strong><br>
+Marketing & Brand Growth Specialist (2021 – 2025)<br>
+• My Art At Home – Designed and managed innovative marketing campaigns that increased online visibility and brand awareness through social media growth and targeted ads.<br>
+• Carboat Rental – Served as the brand’s image, promoted the business through audiovisual content and digital campaigns, significantly increasing exposure and customer engagement.<br>
+Film & Video Director / Editor / VFX / Color Grading (2014 – Present)<br>
+• ¾ de mi alma (2025, Music Video. Leoni Torres) – Director / Screenwriter / Editor<br>
+• My ART (2025, Music Video. My Art at Home) – Director / Editor / Marketing<br>
+• Aeternum (2023, Music Video. Patry White) – Director / Screenwriter<br>
+• Cefeidas (2023, Music Video) – Director / Screenwriter / Editor / Color Grading / VFX<br>
+• Serenata de balcón (2023, Music Video) – Director / Editor / Music Production<br>
+• Agnus Dei (2022, TV Film) – Director / Screenwriter / Soundtrack Design<br>
+• Primer Grado (2022, TV Series) – Screenwriter<br>
+• Sandunguera (2022, Music Video. Anthony Bravo) – Director / Editor / Color Grading<br>
+• Bóveda Celeste (2022, Music Video. Danilo Paris) – Director / Editor / Music Production<br>
+• Karla (2020, Short Film. Giselle Vargas) – Soundtrack Design & Sound Mixing<br>
+• Sobras (2019, Short Film) – Director / Screenwriter / Editor<br>
+• La Sed Humana (2018, Short Film for TV) – Director / Screenwriter / Editor / Soundtrack Design<br>
+• Autómatas (2017, Short Film) – Director / Screenwriter / Editor<br>
+• Conexión (2014–2020, TV Show) – TV Host & Director
+</p>
+<p><strong>Key Achievements</strong><br>
+✔ Developed audiovisual content with strong visual storytelling.<br>
+✔ Directed projects from concept to post-production.<br>
+✔ Integrated original music and sound design into audiovisual works.<br>
+✔ Designed and executed innovative marketing campaigns that boosted brand recognition and revenue growth.
+</p>
+<p><strong>Education</strong><br>
+• B.A. in Audiovisual Media – Faculty of Audiovisual Media (FAMCA, ISA)<br>
+• International Acting for Camera Workshop – EICTV<br>
+• International Directing Workshop – EICTV
+</p>
+<p><strong>Skills</strong><br>
+Film & Commercial Directing<br>
+Image & Sound Editing / Post-production<br>
+Visual Design & Storytelling for Advertising Campaigns<br>
+Music Composition & Production for Film and Advertising<br>
+AI Tools & Creative Applications (image/video generation, automation, content optimization)<br>
+Google Ads Campaigns & Digital Marketing Strategies<br>
+Social Media Growth & Brand Building<br>
+Professional Software: Adobe Creative Suite, Da Vinci Resolve, Steinberg Cubase, Canva
+</p>
+<p><strong>Languages</strong><br>
+• Spanish (Native)<br>
+• English (Professional)
+</p>
+<p><strong>Contact Information</strong><br>
+📧 Email: daniloparismusic@gmail.com<br>
+📍 Miami-Dade
+</p>
+<p><strong>Professional Networks</strong><br>
+• Instagram: @danilo.paris_<br>
+• YouTube: Danilo Paris (Music Channel)<br>
+• YouTube: Directed by Danilo Paris (Cinema Channel)
+</p>
+</div>
+</section>
+
+<script>
+function openVideo(src){
+  document.getElementById("myModal").style.display="flex";
+  document.getElementById("videoContainer").innerHTML =
+    '<iframe width="1000" height="563" src="'+src+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+}
+function closeVideo(){
+  document.getElementById("myModal").style.display="none";
+  document.getElementById("videoContainer").innerHTML = "";
+}
+
+// Animación de letras al entrar en pantalla
+function animateOnScroll() {
+  const elements = document.querySelectorAll('h1, h2, h3, .descripcion, .bio-box');
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll('h1, h2, h3, .descripcion, .bio-box');
+  elements.forEach(el => el.classList.add('fade-in'));
+  animateOnScroll();
+});
+window.addEventListener('scroll', animateOnScroll);
+</script>
+
+</body>
+</html>
