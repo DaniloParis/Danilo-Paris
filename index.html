@@ -150,24 +150,35 @@ p{font-size:1.1em;line-height:1.6;}
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Fondo por defecto de pantalla 1 (PC) */
+#inicio {
+  background-image: url('foto1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Fondo de pantalla 1 para móviles */
+@media (max-width: 767px) {
+  #inicio {
+    background-image: url('foto1-movil.jpg');
+  }
+}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- Pantalla 1 -->
-<section id="inicio" style="background-image:url('foto1.jpg')">
+<section id="inicio">
 <h1>Directed By Danilo Paris</h1>
 <div class="socials">
-  <!-- Instagram -->
   <a href="https://www.instagram.com/danilo.paris_?igsh=M2s1aWlhcWM2b3N3&utm_source=qr" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
   </a>
-  <!-- Facebook -->
   <a href="https://www.facebook.com/share/16hU65HQJY/?mibextid=wwXIfr" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
   </a>
-  <!-- YouTube -->
   <a href="https://youtube.com/@daniloparis?si=MHDeGX6_dUEmvwyD" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube">
   </a>
